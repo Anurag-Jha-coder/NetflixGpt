@@ -1,5 +1,10 @@
 # create-react-app
 # configured tailwind CSS
+# headre
+# Routing 
+# Login form
+# Sign up form
+# Form Validation 
 
 
 # Features to build

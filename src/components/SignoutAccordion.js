@@ -1,15 +1,25 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { removeUser } from "../utils/userSlice";
+
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const SignoutAccordion = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handelSingOut = () => {
-    dispatch(removeUser());
-    navigate("/");
+    // dispatch(removeUser());
+
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+    // navigate("/");
   };
 
   return (

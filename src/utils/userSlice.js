@@ -6,13 +6,15 @@ const addUser = createAction("addUser");
 
 const removeUser = createAction("removeUser");
 
-export const userReducer = createReducer(initialState, (builder) => {
+ const userReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(addUser, (state, action) => {
+      console.log("add user reducer called" , action.payload);
       return action.payload;
     })
 
     .addCase(removeUser, (state, action) => {
+      console.log("remove user reducer called");
       return null;
     });
 });
@@ -27,4 +29,4 @@ const userSlice = {
 };
 
 export { addUser, removeUser };
-export default userSlice.reducer;
+export default userReducer;

@@ -109,7 +109,7 @@ const Login = () => {
           alt="bg-img"
         />
 
-        <div className="relative bg-black bg-opacity-80 p-6 sm:p-12 rounded-lg max-w-sm w-full mx-4 sm:mx-auto">
+        <div className="relative  bg-black bg-opacity-80 p-6 sm:p-12 rounded-lg max-w-sm w-full mx-4 my-24 sm:mx-auto">
           <form
             className="flex flex-col space-y-4 text-white"
             onSubmit={(e) => e.preventDefault()}

@@ -10,9 +10,18 @@ import { DOWN_ARROW, USER_AVATAR, LOGO } from "../utils/constants";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
   const [display, setDisplay] = useState(false);
   const loginuser = useSelector((store) => store.user);
-  console.log("loginuser: ", loginuser);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) { 
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+  
 
   const toggleDisplay = () => {
     setDisplay(!display);
@@ -41,9 +50,11 @@ const Header = () => {
     return () => unSubscribe();
   }, []);
 
+  window.addEventListener("scroll", handleScroll);
+
   return (
     <>
-      <div className="flex justify-between relative px-10, py-2 bg-gradient-to-b from-black z-30">
+      <div className={`flex justify-between fixed top-0 left-0 right-0 px-10 py-2 bg-gradient-to-b from-black z-50  ${isScrolled?"bg-black":''}`}>
         <div className="mx-8">
           <img
             className=" w-32 "
@@ -55,7 +66,7 @@ const Header = () => {
         {loginuser && (
           <div
             onClick={toggleDisplay}
-            className="mx-16 my-2 p-2 flex  relative"
+            className="mx-4 my-2 p-2 flex  relative"
           >
             <img
               className="mx-1"
@@ -71,8 +82,11 @@ const Header = () => {
           </div>
         )}
       </div>
-
+      <div className="relative">
       {display && <SignoutAccordion />}
+      </div>
+
+      
     </>
   );
 };

@@ -17,3 +17,11 @@ export const DOWN_ARROW = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9G
 }
 
 export const API_URL = "https://api.themoviedb.org/3/movie/now_playing?page=1"
+
+export const IMG_CDN = "https://image.tmdb.org/t/p/w500/"
+
+export const POPULAR_MOVIES = "https://api.themoviedb.org/3/movie/popular?page=1"
+
+export const TOP_RATED = 'https://api.themoviedb.org/3/movie/top_rated?page=1';
+
+export const UPCOMING_MOVIES = 'https://api.themoviedb.org/3/movie/upcoming?page=1';

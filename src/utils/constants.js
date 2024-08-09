@@ -25,3 +25,5 @@ export const POPULAR_MOVIES = "https://api.themoviedb.org/3/movie/popular?page=1
 export const TOP_RATED = 'https://api.themoviedb.org/3/movie/top_rated?page=1';
 
 export const UPCOMING_MOVIES = 'https://api.themoviedb.org/3/movie/upcoming?page=1';
+
+export const SUPORTED_LANGUAGES = [{"identifier":"en","name":"English"},{"identifier":"hi","name":"Hindi"},{"identifier":"es","name":"Spanish"}]

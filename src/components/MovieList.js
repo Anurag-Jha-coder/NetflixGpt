@@ -5,7 +5,7 @@ const MovieList = ({ title, movies }) => {
   return (
     <div className="">
       <h1 className="py-1 px-8">{title}</h1>
-      <div className=" flex overflow-x-scroll mx-7">
+      <div className= "flex overflow-x-auto no-scrollbar mx-7">
         <div className="flex">
           {movies?.map((movie) => (
             <MovieCard
